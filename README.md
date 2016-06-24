@@ -1,2 +1,4 @@
 # CourseraShiny
-The Coursera Developing Data Products Shiny app assignment
+Purpose of the app
+
+This Shiny app is supposed to pool probability distributions by means of Monte Carlo simulation. The user can pick from three types of probability distributions, can influence their means and variances, and will fine tune the balance between the two. the defaults at the start of the program are two standard Gaussian normals with equal weights among them. The other choices are exponential and uniform distributions. The shiny app will translate the chosen mean and variances into the parameter for exponentials or uniforms. The app will furthermore generate a Monte Carlo sample of each of the two distributions and display their empirical densities, which should be close two their theoretical ideals. In a third graph it will display the empirical density of the pooled Monte Carlo samples. 
