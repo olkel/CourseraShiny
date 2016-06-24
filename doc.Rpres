@@ -1,0 +1,31 @@
+doc
+========================================================
+author: Oliver Kliegel
+date: 06/23/2016
+autosize: true
+
+Purpose of the app
+========================================================
+
+This Shiny app is supposed to pool probability distributions by means of Monte Carlo simulation. The user can pick from three types of probability distributions, can influence their means and variances, and will fine tune the balance between the two. the defaults at the start of the program are two standard Gaussian normals with equal weights among them. The other choices are exponential and uniform distributions. The shiny app will translate the chosen mean and variances into the parameter for exponentials or uniforms. The app will furthermore generate a Monte Carlo sample of each of the two distributions and display their empirical densities, which should be close two their theoretical ideals. In a third graph it will display the empirical density of the pooled Monte Carlo samples. 
+
+
+
+The inputs
+========================================================
+
+- Selector of type for the first probability distribution (drop down list)
+- Adjuster for the mean of the first distribution
+- Adjuser for the variance of the first distrinution
+- A adjuster with which the user can shift the weights between the two distributions
+- Selector of type for the second probability distribution (drop down list)
+- Adjuster for the mean of the second distribution
+- Adjuser for the variance of the second distrinution
+
+The outputs
+========================================================
+
+The shiny up will output three density plots of three probability distributions.
+- The first plot represents the first user chosen distribution its chosen mean and variance
+- The second plot represents the second user chosen distribution its chosen mean and variance
+- The third plot represents the pooled probability distribution of both the first and the second chosen distribution with respect to the chosen balance between the two
