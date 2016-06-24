@@ -1,4 +1,4 @@
-doc
+Slidify App for Pooling Propabilities
 ========================================================
 author: Oliver Kliegel
 date: 06/23/2016
@@ -29,3 +29,19 @@ The shiny up will output three density plots of three probability distributions.
 - The first plot represents the first user chosen distribution its chosen mean and variance
 - The second plot represents the second user chosen distribution its chosen mean and variance
 - The third plot represents the pooled probability distribution of both the first and the second chosen distribution with respect to the chosen balance between the two
+
+
+Example code with two Gaussian normals (N(-1,2) & N(2,4))
+====
+
+
+```r
+library(ggplot2)
+dat1 <- data.frame(dens = c(rnorm(10000,-1,2), rnorm(10000,2,4)), Distributions = c(rep("a", 10000),rep("b", 10000)))
+dat2 <- data.frame(dens = dat1[,1], Distributions = rep("a + b", 20000))
+dat <- rbind(dat1,dat2)
+ggplot(dat, aes(x = dens, fill = Distributions)) + geom_density(alpha=0.5) + facet_grid(Distributions~.)+ xlab("Values")
+```
+
+![plot of chunk unnamed-chunk-1](doc-figure/unnamed-chunk-1-1.png)
+
